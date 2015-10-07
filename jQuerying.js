@@ -31,11 +31,10 @@ $(document).ready(function($) {
 		$('.hideThis').hide();
 	});
 
-	$( ".cute" ).click(function() {
-		var dogImage = $('img.cute');
+	$(".cute").click(function() {
+		var dogImage = $(this);
 		while ($('img.cute').length < 20) {
-			console.log($('img.cute').length);
-			dogImage.clone().appendTo( ".clones" )
+			$(this).clone().appendTo(".clones")
 		}
 	});
 
