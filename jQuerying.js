@@ -7,7 +7,7 @@ $(document).ready(function($) {
 		$('#hover').toggleClass('green')
 	})
 	.mouseleave(function() {
-		$('#hover').css('background-color', '#39B7CD')
+		$('#hover').css('background-color', '#39B7CD');
 	});
 
 	$('.hideMe').click(function() {
@@ -22,10 +22,45 @@ $(document).ready(function($) {
 		$('ul li:nth-child(2)').hide();
 	});
 
-	$('#removeLi').append('<li>This item is added</li>');
+	$('#addMe').click(function() {
+		$('#addMe').append('<li>This item is added</li>');
+	});
 
-	$( ".cute" ).click(function () {
-		$('.cute').clone().appendTo( ".clones" )
+	$('#makeBig').click(function() {
+		$(this).css('font-size', '40px');
+		$('.hideThis').hide();
+	});
+
+	$( ".cute" ).click(function() {
+		var dogImage = $('img.cute');
+		while ($('img.cute').length < 20) {
+			console.log($('img.cute').length);
+			dogImage.clone().appendTo( ".clones" )
+		}
+	});
+
+	$('html').dblclick(function() {
+		$('#makeSquare').css('border-radius', '0');
+	});
+
+	$('#dontClick').click(function() {
+		alert("Don't click here!")
+	});
+
+	$('.black').click(function() {
+		$('html').toggleClass('black');
+	});
+
+	$('.wood').click(function() {
+		$('html').toggleClass('wood');
+	});
+
+	$('.chaos').click(function() {
+		$('html').toggleClass('chaos');
+	});
+
+	$('.restore').click(function() {
+		$('html').toggleClass('restore');
 	});
 
 });
